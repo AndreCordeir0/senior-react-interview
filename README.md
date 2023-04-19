@@ -1,38 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sênior
 
-## Getting Started
+### **OBJETIVO**
 
-First, run the development server:
+Criar uma aplicação de perguntas e respostas (Quiz).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### **Descrição do Projeto**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Você foi contratado para desenvolver uma aplicação WEB que possibilite os usuários a responderem perguntas sobre conhecimentos gerais e ter a opção de visualizar o histórico de tentativas.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+**Cenário esperado**:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. Ao abrir a página deve apresentar ao usuário um input para a quantidade de perguntas que ele deseja responder;
+2. Com a quantidade especificada deve direcioná-lo para uma página contendo dois botões: "Start" e "Cancel", sendo respectivamente responsáveis para iniciar o quiz e voltar para a seleção da quantidade de perguntas;
+3. Com a quantidade em estado deve-se consultar a [api de perguntas;](https://opentdb.com/api.php?amount=$QUANTIDADE)
+4. Após a consulta deve-se apresentar cada pergunta com suas alternativas (Pode ser multi-telas ou todas em uma única tela) e contabilizar as respostas do usuário sem exibir se são corretas ou não;
+5. Ao final do quiz, deve exibir um relatório de perguntas e respostas com a quantidade total de acertos e erros e deve exibir cada questão marcando a opção que o usuário respondeu e a opção correta (Caso sejam a mesma apenas a opção correta);
+6. O Relatório deve ser salvo no navegador;
+7. Caso o usuário esteja na primeira tela e possua um registro salvo em histórico deve-se apresentar a opção de visualizar histórico
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Critérios de avaliação
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- A aplicação cumpre os requisitos do teste.
+- O repositório possui instruções de como rodar o projeto.
+- Legibilidade do código.
+- Performance
+- Padrão de arquitetura da aplicação
+- Conteinerização
+- Incluir no README do projeto uma descrição breve das escolhas pessoais de tecnologias implementadas no projeto
 
-## Learn More
+### Pontos de atenção
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- A aplicação deve utilizar a lib React + Typescript
+- Fique a vontade para adicionar bibliotecas externas ou frameworks ao projeto.
