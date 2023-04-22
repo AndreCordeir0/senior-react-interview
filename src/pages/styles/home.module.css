@@ -1,0 +1,19 @@
+.inputStyle {
+    width: 100%;
+    background: #2B2B2B;
+    border: 1px solid #3B3B3B;
+    border-radius: 20px;
+    height: 40px;
+    padding: 10px;
+    padding-right: 50px;
+}
+
+.inputStyle:focus{
+    outline: none;
+}
+
+.iconAbsolute{
+    top: 7px;
+    right: 14px;
+    position: absolute;
+}
