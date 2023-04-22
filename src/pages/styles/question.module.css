@@ -1,0 +1,14 @@
+.botaoSelecionar{
+    border-radius: 50%;
+    border: 1px solid #ee8523;
+    width: 25px;
+    height: 25px;
+    color: #ee8523;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.choice{
+    background: #ee8523;
+    color: white;
+}
