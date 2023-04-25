@@ -10,6 +10,8 @@ const lexend = Work_Sans({ subsets: ['latin'] })
 
 export default function Perguntas2(){
     const [listaPerguntas, setListaPerguntas] = useState<Question>();
+    const [respostas , setRespostas] = useState<Map<string, string>>(new Map<string, string>());
+
     const router = useRouter();
     const id = router.query.id as string;
     
@@ -17,22 +19,39 @@ export default function Perguntas2(){
         if(id){
             getQuestions(id).then(res=> {
                 setListaPerguntas(res);
-                console.log(listaPerguntas);
             });
         }
-    },[id])
+    },[id]);
 
+
+    function mostrarRespostas(){
+        if(respostas.size === listaPerguntas?.results.length){
+            let arr = [];
+            if(localStorage.getItem('respostasAnteriores')){
+                arr = JSON.parse(localStorage.getItem('respostasAnteriores') as string);
+            }
+            arr.push(...Array.from(respostas));
+            localStorage.setItem('respostasAnteriores', JSON.stringify(arr));
+            setRespostas(new Map());
+        }
+    }
     return(
-        <div className={`${lexend.className}`}>
+        <div className={`${lexend.className}`} style={{paddingBottom:'20px'}}>
             <MenuTop/>
             <div>
                 {listaPerguntas?.results.map((res, i)=>{
                     return (
-                        <ItemQuestion index={i} question={res}></ItemQuestion>
+
+                        <div key={i}>
+                            <ItemQuestion index={i} question={res} respostas={respostas} setRespostas={setRespostas}></ItemQuestion>
+                        {respostas.size}
+                        </div>
                     )
                 })}
             </div>
-
+            <div className="flex fles-col justify-center">
+                <button className="bg-orange-600 p-3 font-bold" onClick={()=>mostrarRespostas()}>Responder</button>
+            </div>
         </div>
     )
 }
