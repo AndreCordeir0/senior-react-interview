@@ -24,7 +24,12 @@ export default function Perguntas2(){
     },[id]);
 
 
-    function mostrarRespostas(){
+    function handleRespostas(){
+        salvarRespostasNoNavegador();
+        
+
+    }
+    function salvarRespostasNoNavegador(){
         if(respostas.size === listaPerguntas?.results.length){
             let arr = [];
             if(localStorage.getItem('respostasAnteriores')){
@@ -50,7 +55,7 @@ export default function Perguntas2(){
                 })}
             </div>
             <div className="flex fles-col justify-center">
-                <button className="bg-orange-600 p-3 font-bold" onClick={()=>mostrarRespostas()}>Responder</button>
+                <button className="bg-orange-600 p-3 font-bold" onClick={()=>handleRespostas()}>Responder</button>
             </div>
         </div>
     )
