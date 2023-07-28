@@ -1,0 +1,12 @@
+.menu_lateral{
+ border-right: 1px solid rgb(47, 48, 55);
+ height: 100%;
+ padding-top: 0.75rem;
+ min-width: 16rem;
+}
+
+@media screen and (max-width: 992px) {
+    .menu_lateral {
+      display: none;
+    }
+}

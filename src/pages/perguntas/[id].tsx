@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 const lexend = Work_Sans({ subsets: ['latin'] })
 
-export default function Perguntas2(){
+export default function Perguntas(){
     const [listaPerguntas, setListaPerguntas] = useState<Question>();
     const [respostas , setRespostas] = useState<Map<string, string>>(new Map<string, string>());
 
@@ -49,7 +49,6 @@ export default function Perguntas2(){
 
                         <div key={i}>
                             <ItemQuestion index={i} question={res} respostas={respostas} setRespostas={setRespostas}></ItemQuestion>
-                        {respostas.size}
                         </div>
                     )
                 })}

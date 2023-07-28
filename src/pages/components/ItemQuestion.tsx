@@ -23,7 +23,7 @@ export default function ItemQuestion({index, question, respostas, setRespostas}:
         return respostas.get(question.question) == item;
     }
     return (
-        <div className="bg-neutral-700 m-3 rounded-md flex flex-col p-2">
+        <div className="m-3 rounded-md flex flex-col p-2" style={{background: 'rgb(19, 19, 19)'}}>
             <label>{index + 1}. {question.question.replace(/&quot;/g, '"')}: </label>
           <div>
             {perguntas?.map((item,i)=>{

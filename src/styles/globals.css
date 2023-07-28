@@ -22,10 +22,14 @@
 }
 body {
   width: 100%;
-  height: 100%;
-  background-color: #2B2B2B;
-}
-label, div, h1{
-  color:rgb(226 232 240);
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
 }
 
+label, div, h1{
+  color:rgb(255, 255, 255);
+}
+
+#__next, #__next > div{
+  height: 100%;
+}
