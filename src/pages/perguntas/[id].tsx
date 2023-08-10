@@ -14,7 +14,7 @@ export default function Perguntas(){
 
     const router = useRouter();
     const id = router.query.id as string;
-    
+    console.log(router);
     useEffect(()=>{
         if(id){
             getQuestions(id).then(res=> {
@@ -26,8 +26,6 @@ export default function Perguntas(){
 
     function handleRespostas(){
         salvarRespostasNoNavegador();
-        
-
     }
     function salvarRespostasNoNavegador(){
         if(respostas.size === listaPerguntas?.results.length){
@@ -46,7 +44,6 @@ export default function Perguntas(){
             <div>
                 {listaPerguntas?.results.map((res, i)=>{
                     return (
-
                         <div key={i}>
                             <ItemQuestion index={i} question={res} respostas={respostas} setRespostas={setRespostas}></ItemQuestion>
                         </div>

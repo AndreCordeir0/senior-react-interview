@@ -1,8 +1,8 @@
-import { Search } from 'lucide-react'
-import style from '../styles/home.module.css'
-import { ChangeEvent, KeyboardEvent, SetStateAction, useState } from 'react';
-import { getQuestions } from '../shared/services/api.service';
+import { Search } from 'lucide-react';
 import { useRouter } from 'next/router';
+import { ChangeEvent, KeyboardEvent, useState } from 'react';
+import style from '../styles/home.module.css';
+
 export default function HomeQuiz(){
     const [input, setInput] = useState('');
     console.log('renderizado');    
